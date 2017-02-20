@@ -1,10 +1,28 @@
 const compiler = require('vue-template-compiler');
+const transpile = require('vue-template-es2015-compiler')
 
-module.exports = source => {
-    const compiled = compiler.compile(source);
-    return `module.exports = {
-        default: function() {
-            ${compiled.render}
-        }
-    }`
+module.exports = function (html) {
+    this.cacheable();
+
+    const compiled = compiler.compile(html);
+
+    if (compiled.errors.length) {
+        this.emitError(
+            `\n  Error compiling template:\n${pad(html)}\n` +
+            compiled.errors.map(e => `  - ${e}`).join('\n') + '\n'
+        );
+    }
+
+    return transpile('exports.default={' +
+      'render:' + toFunction(compiled.render) + ',' +
+      'staticRenderFns: [' + compiled.staticRenderFns.map(toFunction).join(',') + ']' +
+    '}')
 };
+
+function pad (html) {
+  return html.split(/\r?\n/).map(line => `  ${line}`).join('\n')
+}
+
+function toFunction (code) {
+  return `function (){${code}}`;
+}
