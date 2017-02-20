@@ -1,0 +1,22 @@
+{
+  "name": "vue-render-loader",
+  "version": "0.1.0",
+  "description": "Vue 2 render loader for webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenjiahan/vue-render-loader.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chenjiahan/vue-render-loader/issues"
+  },
+  "homepage": "https://github.com/chenjiahan/vue-render-loader#readme",
+  "dependencies": {
+    "vue-template-compiler": "^2.1.10"
+  }
+}
