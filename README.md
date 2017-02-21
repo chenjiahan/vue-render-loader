@@ -4,7 +4,7 @@ Vue 2 render loader for webpack && typescript.
 ### Example
 component.html
 ``` html
-<div></div>
+<div>{{ text }}</div>
 ```
 
 component.ts
@@ -12,7 +12,10 @@ component.ts
 import render from './component.html';
 import { Vue, Component } from 'vue-class'; 
 
-@Component({ render })
+@Component({ 
+  render,
+  props: ['text']
+})
 export default class MyComponent extends Vue {}
 ```
 
