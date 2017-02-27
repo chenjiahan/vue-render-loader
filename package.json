@@ -1,6 +1,6 @@
 {
   "name": "vue-render-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue 2 render loader for webpack",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/chenjiahan/vue-render-loader#readme",
   "dependencies": {
-    "vue-template-compiler": "^2.1.10",
-    "vue-template-es2015-compiler": "^1.5.0"
+    "vue-template-compiler": "*",
+    "vue-template-es2015-compiler": "*"
   }
 }
