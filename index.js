@@ -13,10 +13,10 @@ module.exports = function (html) {
         );
     }
 
-    return transpile('module.exports={' +
+    return transpile('var template = {' +
       'render:' + toFunction(compiled.render) + ',' +
       'staticRenderFns: [' + compiled.staticRenderFns.map(toFunction).join(',') + ']' +
-    '}')
+    '}').replace('var template =', 'export default ');
 };
 
 function pad (html) {

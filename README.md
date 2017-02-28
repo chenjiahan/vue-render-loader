@@ -1,5 +1,5 @@
 # vue-render-loader
-Vue 2 render loader for webpack && typescript.
+Vue2 render loader for webpack2 && typescript2.
 
 ### Example
 component.html
