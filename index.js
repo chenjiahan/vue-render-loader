@@ -13,7 +13,7 @@ module.exports = function (html) {
         );
     }
 
-    return transpile('exports.default={' +
+    return transpile('module.exports={' +
       'render:' + toFunction(compiled.render) + ',' +
       'staticRenderFns: [' + compiled.staticRenderFns.map(toFunction).join(',') + ']' +
     '}')
