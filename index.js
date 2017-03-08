@@ -4,7 +4,9 @@ const transpile = require('vue-template-es2015-compiler')
 module.exports = function (html) {
     this.cacheable();
 
-    const compiled = compiler.compile(html);
+    const compiled = compiler.compile(html, {
+      preserveWhitespace: false
+    });
 
     if (compiled.errors.length) {
         this.emitError(
